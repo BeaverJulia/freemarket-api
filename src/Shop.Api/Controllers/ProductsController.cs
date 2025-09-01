@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Shop.Domain.Entities;
+using Shop.Domain.Exceptions;
 using Shop.Infrastructure.Interfaces;
 
 namespace Shop.Api.Controllers;
@@ -24,12 +25,7 @@ public class ProductsController(ICatalogStore catalogStore) : ControllerBase
         var product = catalogStore.GetById(id);
         if (product == null)
         {
-            return NotFound(new ProblemDetails
-            {
-                Title = "Product not found",
-                Detail = $"Product with ID {id} was not found",
-                Status = StatusCodes.Status404NotFound
-            });
+            throw new ProductNotFoundException(id);
         }
         
         return Ok(product);

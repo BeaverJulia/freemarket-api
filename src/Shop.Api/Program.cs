@@ -1,3 +1,4 @@
+using Shop.Api.Middleware;
 using Shop.Application.Interfaces;
 using Shop.Application.Services;
 using Shop.Infrastructure.Interfaces;
@@ -27,6 +28,8 @@ builder.Services.AddSingleton<ICatalogStore, InMemoryCatalogStore>();
 builder.Services.AddSingleton<ICartStore, InMemoryCartStore>();
 
 var app = builder.Build();
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
