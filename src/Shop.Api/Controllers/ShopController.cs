@@ -8,22 +8,15 @@ namespace Shop.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-public class CartsController : ControllerBase
+public class CartsController(ICartService cartService) : ControllerBase
 {
-    private readonly ICartService _cartService;
-    
-    public CartsController(ICartService cartService)
-    {
-        _cartService = cartService;
-    }
-
     [HttpPost]
     [ProducesResponseType(typeof(ShopCart), StatusCodes.Status201Created)]
     public ActionResult<ShopCart> CreateCart([FromBody] CreateCartRequest request)
     {
         try
         {
-            var cart = _cartService.CreateCart(request.Country);
+            var cart = cartService.CreateCart(request.Country);
             return CreatedAtAction(nameof(GetCart), new { id = cart.Id }, cart);
         }
         catch (ArgumentException ex)
@@ -41,7 +34,7 @@ public class CartsController : ControllerBase
     [ProducesResponseType(typeof(ShopCart), StatusCodes.Status200OK)]
     public ActionResult<ShopCart> GetCart(Guid id)
     {
-        var cart = _cartService.GetCart(id);
+        var cart = cartService.GetCart(id);
         if(cart == null)
         {
             return NotFound(new ProblemDetails
@@ -61,7 +54,7 @@ public class CartsController : ControllerBase
     {
         try
         {
-            var cart = _cartService.AddItem(id, request.ProductId, request.Quantity);
+            var cart = cartService.AddItem(id, request.ProductId, request.Quantity);
             return Ok(cart);
         }
         catch (CartNotFoundException ex)
@@ -99,7 +92,7 @@ public class CartsController : ControllerBase
     {
         try
         {
-            var cart = _cartService.AddMultipleItems(id, request.Items);
+            var cart = cartService.AddMultipleItems(id, request.Items);
             return Ok(cart);
         }
         catch (CartNotFoundException ex)
@@ -137,7 +130,7 @@ public class CartsController : ControllerBase
     {
         try
         {
-            var cart = _cartService.RemoveItem(id, productId, quantity);
+            var cart = cartService.RemoveItem(id, productId, quantity);
             if (cart == null)
             {
                 return NotFound(new ProblemDetails
@@ -167,7 +160,7 @@ public class CartsController : ControllerBase
     {
         try
         {
-            var cart = _cartService.ApplyDiscountCode(id, request.Code);
+            var cart = cartService.ApplyDiscountCode(id, request.Code);
             return Ok(cart);
         }
         catch (CartNotFoundException ex)
@@ -196,7 +189,7 @@ public class CartsController : ControllerBase
     {
         try
         {
-            var cart = _cartService.SetShipping(id, request.Country);
+            var cart = cartService.SetShipping(id, request.Country);
             return Ok(cart);
         }
         catch (CartNotFoundException ex)
@@ -225,7 +218,7 @@ public class CartsController : ControllerBase
     {
         try
         {
-            var totals = _cartService.GetTotals(id);
+            var totals = cartService.GetTotals(id);
             return Ok(totals);
         }
         catch (CartNotFoundException ex)

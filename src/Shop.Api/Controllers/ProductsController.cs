@@ -6,20 +6,13 @@ namespace Shop.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-public class ProductsController : ControllerBase
+public class ProductsController(ICatalogStore catalogStore) : ControllerBase
 {
-    private readonly ICatalogStore _catalogStore;
-    
-    public ProductsController(ICatalogStore catalogStore)
-    {
-        this._catalogStore = catalogStore;
-    }
-
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
     public ActionResult<IEnumerable<Product>> GetProducts()
     {
-        var products = _catalogStore.GetAll();
+        var products = catalogStore.GetAll();
         return Ok(products);
     }
 
@@ -28,12 +21,12 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<Product> GetProduct(Guid id)
     {
-        var product = _catalogStore.GetById(id);
+        var product = catalogStore.GetById(id);
         if (product == null)
         {
             return NotFound(new ProblemDetails
             {
-                Title = "Produc not found",
+                Title = "Product not found",
                 Detail = $"Product with ID {id} was not found",
                 Status = StatusCodes.Status404NotFound
             });
