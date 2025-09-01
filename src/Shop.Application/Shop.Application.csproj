@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Shop.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj"/>
+        <ProjectReference Include="..\Shop.Infrastructure\Shop.Infrastructure.csproj"/>
+    </ItemGroup>
+
+</Project>
