@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api", "freemarket-api\src\Shop.Api\Shop.Api.csproj", "{73B97BD4-8C78-4608-AE29-49007B653890}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api", "src\Shop.Api\Shop.Api.csproj", "{73B97BD4-8C78-4608-AE29-49007B653890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "freemarket-api\src\Shop.Application\Shop.Application.csproj", "{E60A8379-538B-43BB-BBAF-877C8F61BACE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "src\Shop.Application\Shop.Application.csproj", "{E60A8379-538B-43BB-BBAF-877C8F61BACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain", "freemarket-api\src\Shop.Domain\Shop.Domain.csproj", "{20DCCEB5-27B0-43AE-9118-745D615C315C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain", "src\Shop.Domain\Shop.Domain.csproj", "{20DCCEB5-27B0-43AE-9118-745D615C315C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Infrastructure", "freemarket-api\src\Shop.Infrastructure\Shop.Infrastructure.csproj", "{021D2DA4-4986-4928-946D-BB1120DEC305}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Infrastructure", "src\Shop.Infrastructure\Shop.Infrastructure.csproj", "{021D2DA4-4986-4928-946D-BB1120DEC305}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
