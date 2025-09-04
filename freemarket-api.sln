@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api", "freemarket-api\src\Shop.Api\Shop.Api.csproj", "{73B97BD4-8C78-4608-AE29-49007B653890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "freemarket-api\src\Shop.Application\Shop.Application.csproj", "{E60A8379-538B-43BB-BBAF-877C8F61BACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain", "freemarket-api\src\Shop.Domain\Shop.Domain.csproj", "{20DCCEB5-27B0-43AE-9118-745D615C315C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Infrastructure", "freemarket-api\src\Shop.Infrastructure\Shop.Infrastructure.csproj", "{021D2DA4-4986-4928-946D-BB1120DEC305}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73B97BD4-8C78-4608-AE29-49007B653890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B97BD4-8C78-4608-AE29-49007B653890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B97BD4-8C78-4608-AE29-49007B653890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B97BD4-8C78-4608-AE29-49007B653890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60A8379-538B-43BB-BBAF-877C8F61BACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60A8379-538B-43BB-BBAF-877C8F61BACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60A8379-538B-43BB-BBAF-877C8F61BACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60A8379-538B-43BB-BBAF-877C8F61BACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DCCEB5-27B0-43AE-9118-745D615C315C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DCCEB5-27B0-43AE-9118-745D615C315C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DCCEB5-27B0-43AE-9118-745D615C315C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DCCEB5-27B0-43AE-9118-745D615C315C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021D2DA4-4986-4928-946D-BB1120DEC305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021D2DA4-4986-4928-946D-BB1120DEC305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021D2DA4-4986-4928-946D-BB1120DEC305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021D2DA4-4986-4928-946D-BB1120DEC305}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
